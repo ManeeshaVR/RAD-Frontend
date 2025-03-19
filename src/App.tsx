@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import Home from "./pages/Home.tsx";
+import SignIn from "./pages/SignIn.tsx";
+import SignUp from "./pages/SignUp.tsx";
+import Products from "./pages/Products.tsx";
+import ProductDetails from "./pages/ProductDetails.tsx";
+import Wishlist from "./pages/Wishlist.tsx";
+import Cart from "./pages/Cart.tsx";
+import Checkout from "./pages/Checkout.tsx";
+import PaymentSuccess from "./pages/PaymentSuccess.tsx";
+import PaymentFail from "./pages/PaymentFail.tsx";
+import {ToastProvider} from "./context/ToastContext.tsx";
+import {AppContextProvider} from "./context/AppContext.tsx";
+import Layout from "./components/Layout.tsx";
+import ProtectedRoutes from "./utils/ProtectedRoutes.tsx";
+import ToastContainer from "./components/ToastContainer.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <ToastProvider>
+            <AppContextProvider>
+                <BrowserRouter>
+                    <Routes>
+                        <Route element={<Layout/>}>
+                            <Route path='/' element={<Home/>}/>
+                            <Route path='/signin' element={<SignIn/>}/>
+                            <Route path='/signup' element={<SignUp/>}/>
+                            <Route path='/products' element={<Products/>}/>
+                            <Route path='/product/:productId' element={<ProductDetails/>}/>
+                            <Route element={<ProtectedRoutes/>}>
+                                <Route path='/wishlist' element={<Wishlist/>}/>
+                                <Route path='/cart' element={<Cart/>}/>
+                                <Route path='/checkout' element={<Checkout/>}/>
+                                <Route path='/paymentSuccess' element={<PaymentSuccess/>}/>
+                                <Route path='/paymentFailure' element={<PaymentFail/>}/>
+                            </Route>
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+                <ToastContainer/>
+            </AppContextProvider>
+        </ToastProvider>
+    )
 }
 
 export default App
