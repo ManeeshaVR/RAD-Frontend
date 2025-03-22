@@ -1,4 +1,3 @@
-import React from "react";
 import Home from "./pages/Home.tsx";
 import SignIn from "./pages/SignIn.tsx";
 import SignUp from "./pages/SignUp.tsx";
@@ -14,6 +13,7 @@ import {AppContextProvider} from "./context/AppContext.tsx";
 import Layout from "./components/Layout.tsx";
 import ProtectedRoutes from "./utils/ProtectedRoutes.tsx";
 import ToastContainer from "./components/ToastContainer.tsx";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
 
