@@ -35,7 +35,7 @@ const Products = () => {
     return (
         <div className='px-6 md:px-24 pt-28'>
             <img
-                src='/products_banner.jpg'
+                src='/shoes_banner.jpg'
                 alt='bannerImg'
                 className='rounded-2xl h-full min-h-[10rem] object-cover'
             />

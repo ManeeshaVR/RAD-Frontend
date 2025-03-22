@@ -44,16 +44,16 @@ const SignIn = () => {
                 <div
                     className="hero"
                     style={{
-                        backgroundImage: "url('/prescription_glasses.jpg')",
+                        backgroundImage: "url('/high-heel.jpg')",
                     }}>
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-neutral-content text-center">
                         <div className="max-w-md">
                             <h1 className="mb-5 text-5xl font-bold">Welcome Back</h1>
                             <p className="mb-5">
-                                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
-                                exercitationem
-                                quasi. In deleniti eaque aut repudiandae et a id nisi.
+                                Welcome to NexStep, where every step is a journey in style and comfort. Discover our
+                                latest collection of footwear designed to elevate your every stride. Join us and step
+                                into a world of unparalleled craftsmanship and innovation.
                             </p>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ const SignIn = () => {
             <div className="flex-1">
                 <div className='w-full h-full flex justify-center items-center'>
                     <div className='w-full mx-16 md:mx-32'>
-                        <div className='w-full flex justify-center items-center'>
+                    <div className='w-full flex justify-center items-center'>
                             <img src='/logo.png' className='w-48' alt='logo'/>
                         </div>
                         <div className='w-full flex justify-center items-center mb-8'>
